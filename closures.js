@@ -4,17 +4,18 @@ var outer = function(){
   var name = 'Tyler';
   return function(){
     return 'The original name was ' + name;
-  }
-}
+  };
+};
 //Above you're given a function that returns another function which has a closure over the name variable.
 //Invoke outer saving the return value into another variable called 'inner'.
 
-  //Code Here
+
 
 //Once you do that, invoke inner.
 
   //Code Here
-
+ var inner = outer();
+ console.log(inner);
 
 
 //Next problem
@@ -34,7 +35,8 @@ var callFriend = function(){
 
   //Code Here
 
-
+var number = "435-215-9248";
+callFriend(number);
 
 //Next Problem
 
@@ -45,11 +47,14 @@ var callFriend = function(){
 */
 
   //Code Here
-  var count = makeCounter();
-  count() // 1
-  count() // 2
-  count() // 3
-  count() // 4
+function makeCounter() {
+    for (var i = 0, i < 4, i++) {
+      return  count(i);
+    };
+  }
+
+makeCounter();
+
 
 
 
@@ -64,6 +69,16 @@ var callFriend = function(){
 
   //Code Here
 
+function total(n) {
+  var x;
+  if (n >= 100) {
+    x = n;
+  }
+  else if (n < 50) {
+    x = n + 10;
+  }
+  return n;
+}
 
 
 //Next Problem
@@ -74,7 +89,13 @@ var callFriend = function(){
   Now, similar to the last problem, write a function called 'fnCounter' that accepts two parameters. The first parameter will be an anonymous function and the second parameter, 'N', will be a number. Now, in 'fnCounter', allow the anonymous funciton to be invoked 'N' number of times. After it's been invoked 'N' number of times, return 'STOP'.
 */
 
+  var fnCounter = function() {
+    if (n > 0) {
+      var n = fnCounter - n;
+      return n;
+    }
 
+}
 
 //Next Problem
 
@@ -89,16 +110,20 @@ var callFriend = function(){
     }
   };
 
-  Above you have a function named counter. Examine the function (without running the code) then below write what you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression after a specified number of milliseconds.
+  Above you have a function named counter. Examine the function (without running the code) then below write what
+  you expect to happen when the funciton is invoked. *Hint: setTimeout calls a function or evaluates an expression
+  after a specified number of milliseconds.
 
     //Answer Here
-
+It will count until it hits 5 seconds.
 
   Now, run the function in your console and note what happpens.
 
   Was your answer right or wrong?
 
     //Answer Here
+    I coulnd't see it do anything. I must be running it incorrectly. (I haven't
+  been able to see any of my code in the console to this point.)
 
 
   Fix the counter function so that it works the way you expect it to work. (logging 1 then 2 then 3, etc)
@@ -124,5 +149,9 @@ var callFriend = function(){
 
   *Hint: Don't let this fool you. Break down what's really happening here.
 */
-
-
+var funcArray[] = function() {
+  var i = 0;
+  for (i === 0, i < 6, i++) {
+    return funcArray(i);
+  }
+}
