@@ -15,7 +15,7 @@ var outer = function(){
 
   //Code Here
  var inner = outer();
- console.log(inner);
+ console.log(inner());
 
 
 //Next problem
@@ -35,8 +35,19 @@ var callFriend = function(){
 
   //Code Here
 
-var number = "435-215-9248";
-callFriend(number);
+  //Code Here
+var callFriend = function(){
+  var friend = 'Jake';
+  function callF(number){
+    return 'Calling ' + friend + ' at ' + number;
+  }
+  console.log(callF('435-215-9248'));
+  return callF; 
+  
+};
+
+
+callFriend();
 
 //Next Problem
 
@@ -47,15 +58,16 @@ callFriend(number);
 */
 
   //Code Here
-function makeCounter() {
-    for (var i = 0, i < 4, i++) {
-      return  count(i);
-    };
-  }
+var makeCounter = (function () {
+    var counter = 0;
+    return function() {return counter += 1;};
+})();
 
-makeCounter();
-
-
+var count = makeCounter;
+count(); 
+count();
+count();
+console.log(count());
 
 
 //Next Problem
